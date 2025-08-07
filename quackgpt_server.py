@@ -3,6 +3,9 @@ import requests
 import os
 
 app = Flask(__name__)
+@app.route("/")
+def health():
+    return "QuackGPT is alive 🦆", 200
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 LLM_MODEL = "llama3-70b-8192"
