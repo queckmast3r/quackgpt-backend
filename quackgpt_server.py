@@ -1,3 +1,10 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
 from flask import Flask, request, jsonify
 import requests
 import os
